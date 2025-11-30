@@ -1,4 +1,4 @@
-# 🎯 Multi-Service Booking App
+# Multi-Service Booking App
 
 A beautiful React Native mobile application for booking hotels, salons, restaurants, and spa services - all in one place!
 
@@ -88,16 +88,6 @@ FIRSt_aPp-1/
 └── package.json              # Dependencies
 ```
 
-## 🎨 Design System
-
-The app uses a custom design system with:
-- **Primary Color:** `#6C63FF` (Purple)
-- **Secondary Color:** `#FF6584` (Pink)
-- **Accent Color:** `#4ECDC4` (Teal)
-- **Typography:** System fonts with defined size scale
-- **Spacing:** Consistent 16px base unit
-- **Shadows:** Subtle elevation for depth
-
 ## 📋 Current Features & Data
 
 ### Available Services
@@ -139,35 +129,6 @@ The app includes 3 sample bookings to demonstrate the My Bookings feature:
 6. **Success** → Get confirmation and return to home
 7. **Manage** → View all bookings in "My Bookings" tab
 
-## 🔌 Backend Integration (Optional)
-
-The app is currently using mock data for demonstration. To integrate with the backend:
-
-1. **Start MongoDB**
-```bash
-mongod
-```
-
-2. **Configure backend**
-```bash
-cd server
-npm install
-```
-
-3. **Start server**
-```bash
-npm start
-# Server runs on http://localhost:5000
-```
-
-4. **Update API URL**
-   - Edit `src/utils/constants.js`
-   - Change `API_URL` to your server IP
-   - Replace `localhost` with machine IP for mobile testing
-
-5. **Restore API calls**
-   - Uncomment API calls in booking screens
-   - Remove mock data from list screens
 
 ## 🐛 Bug Fixes & Improvements
 
@@ -193,35 +154,10 @@ Recent updates:
 - [ ] Dark mode support
 - [ ] Multiple language support
 
-## 📱 Screenshots
 
-Screenshots will be added soon!
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ## 👨‍💻 Author
 
 **Ayush Kumar Jha**
 - GitHub: [@jhaayushkumar](https://github.com/jhaayushkumar)
 
-## 🙏 Acknowledgments
-
-- Images from [Unsplash](https://unsplash.com)
-- Icons and emojis from Unicode standard
-- React Native and Expo communities
-
----
-
-Made with ❤️ using React Native + Expo
