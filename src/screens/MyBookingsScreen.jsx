@@ -15,11 +15,51 @@ const MyBookingsScreen = () => {
 
     const fetchBookings = async () => {
         try {
-            // Replace with actual user ID from authentication
-            const response = await bookingsAPI.getUserBookings('guest_user');
-            if (response.data.success) {
-                setBookings(response.data.data);
-            }
+            // Mock bookings data - replace with API call when backend is ready
+            const mockBookings = [
+                {
+                    _id: '1',
+                    serviceName: 'The Grand Plaza Hotel',
+                    serviceType: 'Hotel',
+                    bookingDate: '2025-12-15',
+                    checkIn: '2025-12-15',
+                    checkOut: '2025-12-18',
+                    guests: 2,
+                    totalPrice: 45000,
+                    status: 'confirmed',
+                    userName: 'Guest User',
+                    userEmail: 'guest@example.com',
+                    location: 'Downtown, Mumbai'
+                },
+                {
+                    _id: '2',
+                    serviceName: 'Glamour Studio',
+                    serviceType: 'Salon',
+                    bookingDate: '2025-12-10',
+                    appointmentTime: '3:00 PM',
+                    services: ['Haircut', 'Hair Color'],
+                    totalPrice: 2500,
+                    status: 'confirmed',
+                    userName: 'Guest User',
+                    userEmail: 'guest@example.com',
+                    location: 'Bandra, Mumbai'
+                },
+                {
+                    _id: '3',
+                    serviceName: 'Taj Fine Dining',
+                    serviceType: 'Restaurant',
+                    bookingDate: '2025-12-05',
+                    bookingTime: '7:30 PM',
+                    guests: 4,
+                    totalPrice: 5000,
+                    status: 'pending',
+                    userName: 'Guest User',
+                    userEmail: 'guest@example.com',
+                    location: 'Connaught Place, Delhi'
+                }
+            ];
+
+            setBookings(mockBookings);
         } catch (error) {
             console.error('Error fetching bookings:', error);
         } finally {
@@ -36,17 +76,12 @@ const MyBookingsScreen = () => {
                 {
                     text: 'Yes, Cancel',
                     style: 'destructive',
-                    onPress: async () => {
-                        try {
-                            const response = await bookingsAPI.cancel(bookingId);
-                            if (response.data.success) {
-                                Alert.alert('Success', 'Booking cancelled successfully');
-                                fetchBookings(); // Refresh the list
-                            }
-                        } catch (error) {
-                            console.error('Error canceling booking:', error);
-                            Alert.alert('Error', 'Failed to cancel booking');
-                        }
+                    onPress: () => {
+                        // Remove booking from state (simulating cancellation)
+                        setBookings(prevBookings =>
+                            prevBookings.filter(booking => booking._id !== bookingId)
+                        );
+                        Alert.alert('Success', 'Booking cancelled successfully');
                     },
                 },
             ]

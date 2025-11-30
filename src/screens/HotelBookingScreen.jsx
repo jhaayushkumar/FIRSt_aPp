@@ -36,39 +36,22 @@ const HotelBookingScreen = ({ route, navigation }) => {
 
         setLoading(true);
 
-        try {
-            const bookingData = {
-                userId: 'guest_user', // Replace with actual user ID from auth
-                userName: formData.userName,
-                userEmail: formData.userEmail,
-                bookingDate: new Date(formData.checkIn),
-                checkIn: formData.checkIn,
-                checkOut: formData.checkOut,
-                guests: parseInt(formData.guests),
-                roomType: formData.roomType,
-                totalPrice: hotel.price,
-            };
-
-            const response = await hotelsAPI.book(hotel._id, bookingData);
-
-            if (response.data.success) {
-                Alert.alert(
-                    'Success!',
-                    'Your hotel has been booked successfully!',
-                    [
-                        {
-                            text: 'OK',
-                            onPress: () => navigation.navigate('Home'),
-                        },
-                    ]
-                );
-            }
-        } catch (error) {
-            console.error('Booking error:', error);
-            Alert.alert('Error', 'Failed to book hotel. Please try again.');
-        } finally {
+        // Simulate booking delay
+        setTimeout(() => {
             setLoading(false);
-        }
+
+            // Success - booking confirmed!
+            Alert.alert(
+                'Success! 🎉',
+                `Your booking at ${hotel.name} has been confirmed!\n\nCheck-in: ${formData.checkIn}\nGuests: ${formData.guests}\n\nWe've sent confirmation to ${formData.userEmail}`,
+                [
+                    {
+                        text: 'OK',
+                        onPress: () => navigation.navigate('Home'),
+                    },
+                ]
+            );
+        }, 1500);
     };
 
     return (

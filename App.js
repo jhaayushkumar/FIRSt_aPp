@@ -1,5 +1,5 @@
 import React from 'react';
-import { StatusBar } from 'react-native';
+import { StatusBar, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -39,7 +39,7 @@ function TabNavigator() {
                 component={HomeScreen}
                 options={{
                     tabBarLabel: 'Home',
-                    tabBarIcon: ({ color }) => <span style={{ fontSize: 24 }}>🏠</span>,
+                    tabBarIcon: ({ color }) => <Text style={{ fontSize: 24 }}>🏠</Text>,
                 }}
             />
             <Tab.Screen
@@ -47,7 +47,7 @@ function TabNavigator() {
                 component={MyBookingsScreen}
                 options={{
                     tabBarLabel: 'My Bookings',
-                    tabBarIcon: ({ color }) => <span style={{ fontSize: 24 }}>📋</span>,
+                    tabBarIcon: ({ color }) => <Text style={{ fontSize: 24 }}>📋</Text>,
                 }}
             />
         </Tab.Navigator>

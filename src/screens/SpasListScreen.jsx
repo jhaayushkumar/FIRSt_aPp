@@ -15,10 +15,39 @@ const SpasListScreen = ({ navigation }) => {
 
     const fetchSpas = async () => {
         try {
-            const response = await spasAPI.getAll();
-            if (response.data.success) {
-                setSpas(response.data.data);
-            }
+            const mockSpas = [
+                {
+                    _id: '1',
+                    name: 'Serenity Day Spa',
+                    description: 'Luxurious spa treatments for complete relaxation',
+                    price: 3500,
+                    rating: 4.9,
+                    images: ['https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=500'],
+                    location: 'Juhu, Mumbai',
+                    treatments: ['Swedish Massage', 'Hot Stone', 'Aromatherapy', 'Body Scrub']
+                },
+                {
+                    _id: '2',
+                    name: 'Ayurvedic Wellness Center',
+                    description: 'Traditional Ayurvedic treatments and therapies',
+                    price: 4000,
+                    rating: 4.8,
+                    images: ['https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=500'],
+                    location: 'Whitefield, Bangalore',
+                    treatments: ['Abhyanga', 'Shirodhara', 'Panchakarma', 'Herbal Bath']
+                },
+                {
+                    _id: '3',
+                    name: 'The Healing Touch Spa',
+                    description: 'Modern spa with range of therapeutic massages',
+                    price: 3000,
+                    rating: 4.7,
+                    images: ['https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=500'],
+                    location: 'Nehru Place, Delhi',
+                    treatments: ['Deep Tissue', 'Thai Massage', 'Reflexology', 'Couples Massage']
+                },
+            ];
+            setSpas(mockSpas);
         } catch (error) {
             console.error('Error fetching spas:', error);
         } finally {

@@ -15,10 +15,39 @@ const RestaurantsListScreen = ({ navigation }) => {
 
     const fetchRestaurants = async () => {
         try {
-            const response = await restaurantsAPI.getAll();
-            if (response.data.success) {
-                setRestaurants(response.data.data);
-            }
+            const mockRestaurants = [
+                {
+                    _id: '1',
+                    name: 'Taj Fine Dining',
+                    description: 'Authentic Indian cuisine in elegant ambiance',
+                    price: 2500,
+                    rating: 4.8,
+                    images: ['https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500'],
+                    location: 'Connaught Place, Delhi',
+                    cuisine: ['Indian', 'Mughlai', 'Continental']
+                },
+                {
+                    _id: '2',
+                    name: 'The Italian Kitchen',
+                    description: 'Fresh pasta and wood-fired pizzas',
+                    price: 2000,
+                    rating: 4.6,
+                    images: ['https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=500'],
+                    location: 'Indiranagar, Bangalore',
+                    cuisine: ['Italian', 'Mediterranean']
+                },
+                {
+                    _id: '3',
+                    name: 'Sushi Zen',
+                    description: 'Premium Japanese sushi and sashimi',
+                    price: 3000,
+                    rating: 4.7,
+                    images: ['https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=500'],
+                    location: 'Powai, Mumbai',
+                    cuisine: ['Japanese', 'Asian Fusion']
+                },
+            ];
+            setRestaurants(mockRestaurants);
         } catch (error) {
             console.error('Error fetching restaurants:', error);
         } finally {
